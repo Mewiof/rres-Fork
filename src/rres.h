@@ -579,8 +579,8 @@ rresResourceChunk rresLoadResourceChunk(const char *fileName, int rresId)
         // Read rres file header
         fread(&header, sizeof(rresFileHeader), 1, rresFile);
 
-        // Verify file signature: "rres" and file version: 100
-        if (((header.id[0] == 'r') && (header.id[1] == 'r') && (header.id[2] == 'e') && (header.id[3] == 's')) && (header.version == 100))
+        // Verify file signature: "sltb" and file version: 100
+        if (((header.id[0] == 's') && (header.id[1] == 'l') && (header.id[2] == 't') && (header.id[3] == 'b')) && (header.version == 100))
         {
             bool found = false;
 
@@ -674,8 +674,8 @@ rresResourceMulti rresLoadResourceMulti(const char *fileName, int rresId)
         // Read rres file header
         fread(&header, sizeof(rresFileHeader), 1, rresFile);
 
-        // Verify file signature: "rres" and file version: 100
-        if (((header.id[0] == 'r') && (header.id[1] == 'r') && (header.id[2] == 'e') && (header.id[3] == 's')) && (header.version == 100))
+        // Verify file signature: "sltb" and file version: 100
+        if (((header.id[0] == 's') && (header.id[1] == 'l') && (header.id[2] == 't') && (header.id[3] == 'b')) && (header.version == 100))
         {
             bool found = false;
 
@@ -785,8 +785,8 @@ RRESAPI rresResourceChunkInfo rresLoadResourceChunkInfo(const char *fileName, in
 
         fread(&header, sizeof(rresFileHeader), 1, rresFile);
 
-        // Verify file signature: "rres", file version: 100
-        if (((header.id[0] == 'r') && (header.id[1] == 'r') && (header.id[2] == 'e') && (header.id[3] == 's')) && (header.version == 100))
+        // Verify file signature: "sltb", file version: 100
+        if (((header.id[0] == 's') && (header.id[1] == 'l') && (header.id[2] == 't') && (header.id[3] == 'b')) && (header.version == 100))
         {
             // Try to find provided resource chunk id and read info chunk
             for (int i = 0; i < header.chunkCount; i++)
@@ -826,8 +826,8 @@ RRESAPI rresResourceChunkInfo *rresLoadResourceChunkInfoAll(const char *fileName
 
         fread(&header, sizeof(rresFileHeader), 1, rresFile);
 
-        // Verify file signature: "rres", file version: 100
-        if (((header.id[0] == 'r') && (header.id[1] == 'r') && (header.id[2] == 'e') && (header.id[3] == 's')) && (header.version == 100))
+        // Verify file signature: "sltb", file version: 100
+        if (((header.id[0] == 's') && (header.id[1] == 'l') && (header.id[2] == 't') && (header.id[3] == 'b')) && (header.version == 100))
         {
             // Load all resource chunks info
             infos = (rresResourceChunkInfo *)RRES_CALLOC(header.chunkCount, sizeof(rresResourceChunkInfo));
@@ -863,8 +863,8 @@ rresCentralDir rresLoadCentralDirectory(const char *fileName)
 
         fread(&header, sizeof(rresFileHeader), 1, rresFile);
 
-        // Verify file signature: "rres", file version: 100
-        if (((header.id[0] == 'r') && (header.id[1] == 'r') && (header.id[2] == 'e') && (header.id[3] == 's')) && (header.version == 100))
+        // Verify file signature: "sltb", file version: 100
+        if (((header.id[0] == 's') && (header.id[1] == 'l') && (header.id[2] == 't') && (header.id[3] == 'b')) && (header.version == 100))
         {
             // Check if there is a Central Directory available
             if (header.cdOffset == 0) RRES_LOG("RRES: WARNING: CDIR: No central directory found\n");
